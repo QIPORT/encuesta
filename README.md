@@ -30,9 +30,8 @@
             font-weight: bold;
             color: #333;
         }
-        .question textarea {
+        .question textarea, .question input {
             width: 100%;
-            height: 100px;
             padding: 10px;
             font-size: 16px;
             border-radius: 4px;
@@ -62,7 +61,21 @@
 <body>
     <div class="container">
         <h1>Encuesta de Productos</h1>
-        <form action="submit_form.php" method="POST"> <!-- Formulario con action para el procesamiento -->
+        <form action="submit_form.php" method="POST">
+            <!-- Nombre y Apellido -->
+            <div class="question">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="question">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+            </div>
+            <!-- Curso -->
+            <div class="question">
+                <label for="curso">Curso</label>
+                <input type="text" id="curso" name="curso" placeholder="Ingresa tu curso" required>
+            </div>
             <!-- Bebida energizante -->
             <div class="question">
                 <label for="producto1">Bebida energizante</label>
