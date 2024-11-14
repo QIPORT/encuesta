@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Productos</title>
+    <title>Unidad Educativa Dr Arturo Freire - Encuesta de Productos</title>
     <style>
         body {
             background-color: #ADD8E6; /* Fondo azul claro */
@@ -30,7 +31,7 @@
             font-weight: bold;
             color: #333;
         }
-        .question textarea, .question input {
+        .question select {
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -56,66 +57,127 @@
         button:hover {
             background-color: #45a049;
         }
+        .product-image {
+            width: 250px; /* Ajusta el ancho */
+            height: 250px; /* Ajusta la altura para que sea cuadrada */
+            object-fit: cover; /* Mantiene la imagen cuadrada, recortando si es necesario */
+            display: block;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Encuesta de Productos</h1>
+        <h1>Unidad Educativa Dr Arturo Freire - Encuesta de Productos</h1>
         <form action="submit_form.php" method="POST">
-            <!-- Nombre y Apellido -->
-            <div class="question">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
-            </div>
-            <div class="question">
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
-            </div>
-            <!-- Curso -->
-            <div class="question">
-                <label for="curso">Curso</label>
-                <input type="text" id="curso" name="curso" placeholder="Ingresa tu curso" required>
-            </div>
             <!-- Bebida energizante -->
             <div class="question">
-                <label for="producto1">Bebida energizante</label>
-                <p class="product-description">
-                    Esta bebida energizante está llena de antioxidantes que ayudan a fortalecer el sistema inmune. También es excelente para proporcionar energía natural sin los efectos secundarios de otras bebidas energéticas.
-                </p>
-                <textarea id="producto1" name="producto1" placeholder="¿Qué te parece la bebida energizante? ¿Te gustaría probarla?" required></textarea>
+                <label for="bebida_energizante">¿Qué te parece la bebida energizante?</label>
+                <img class="product-image" src="imagenes/bebida_energizante.jpg" alt="Bebida Energizante">
+                <select id="bebida_energizante" name="bebida_energizante" required>
+                    <option value="excelente">Excelente</option>
+                    <option value="buena">Buena</option>
+                    <option value="regular">Regular</option>
+                    <option value="mala">Mala</option>
+                    <option value="muy_mala">Muy mala</option>
+                </select>
             </div>
-            <!-- Almojabana -->
             <div class="question">
-                <label for="producto2">Almojabana</label>
-                <p class="product-description">
-                    La almojabana es un delicioso panecillo hecho de queso fresco, con una textura suave por dentro y un sabor irresistible. Es una excelente opción para acompañar tu desayuno o merienda, aportando energía y calcio.
-                </p>
-                <textarea id="producto2" name="producto2" placeholder="¿Te gusta la almojabana? ¿La recomendarías?" required></textarea>
+                <label for="energizante_sabor">¿Te gusta el sabor de la bebida energizante?</label>
+                <select id="energizante_sabor" name="energizante_sabor" required>
+                    <option value="si_mucho">Sí, mucho</option>
+                    <option value="si">Sí</option>
+                    <option value="indiferente">Indiferente</option>
+                    <option value="no_mucho">No mucho</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="energizante_frecuencia">¿Con qué frecuencia consumirías esta bebida?</label>
+                <select id="energizante_frecuencia" name="energizante_frecuencia" required>
+                    <option value="diariamente">Diariamente</option>
+                    <option value="semanalmente">Semanalmente</option>
+                    <option value="ocasionalmente">Ocasionalmente</option>
+                    <option value="raramente">Raramente</option>
+                    <option value="nunca">Nunca</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="energizante_preferencia">¿Prefieres esta bebida sobre otras energizantes?</label>
+                <select id="energizante_preferencia" name="energizante_preferencia" required>
+                    <option value="si_mucho">Sí, mucho</option>
+                    <option value="si">Sí</option>
+                    <option value="indiferente">Indiferente</option>
+                    <option value="no_mucho">No mucho</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="energizante_recomendacion">¿Recomendarías esta bebida a otros?</label>
+                <select id="energizante_recomendacion" name="energizante_recomendacion" required>
+                    <option value="si_mucho">Sí, mucho</option>
+                    <option value="si">Sí</option>
+                    <option value="indiferente">Indiferente</option>
+                    <option value="no_mucho">No mucho</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <!-- Almojábana -->
+            <div class="question">
+                <label for="almojabana_sabor">¿Qué tan agradable te parece el sabor de la almojábana?</label>
+                <img class="product-image" src="imagenes/almojabana.jpg" alt="Almojabana">
+                <select id="almojabana_sabor" name="almojabana_sabor" required>
+                    <option value="muy_agradable">Muy agradable</option>
+                    <option value="agradable">Agradable</option>
+                    <option value="indiferente">Indiferente</option>
+                    <option value="desagradable">Desagradable</option>
+                    <option value="muy_desagradable">Muy desagradable</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="almojabana_textura">¿Te gusta la textura de la almojábana?</label>
+                <select id="almojabana_textura" name="almojabana_textura" required>
+                    <option value="si_mucho">Sí, mucho</option>
+                    <option value="si">Sí</option>
+                    <option value="indiferente">Indiferente</option>
+                    <option value="no_mucho">No mucho</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="almojabana_frecuencia">¿Con qué frecuencia consumirías almojábanas?</label>
+                <select id="almojabana_frecuencia" name="almojabana_frecuencia" required>
+                    <option value="diariamente">Diariamente</option>
+                    <option value="semanalmente">Semanalmente</option>
+                    <option value="ocasionalmente">Ocasionalmente</option>
+                    <option value="raramente">Raramente</option>
+                    <option value="nunca">Nunca</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="almojabana_contenido">¿Qué te parece la cantidad de queso en la almojábana?</label>
+                <select id="almojabana_contenido" name="almojabana_contenido" required>
+                    <option value="perfecto">Perfecto</option>
+                    <option value="bueno">Bueno</option>
+                    <option value="neutro">Neutro</option>
+                    <option value="poco">Poco</option>
+                    <option value="muy_poco">Muy poco</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="almojabana_recomendacion">¿Recomendarías la almojábana a tus amigos?</label>
+                <select id="almojabana_recomendacion" name="almojabana_recomendacion" required>
+                    <option value="si_mucho">Sí, mucho</option>
+                    <option value="si">Sí</option>
+                    <option value="indiferente">Indiferente</option>
+                    <option value="no_mucho">No mucho</option>
+                    <option value="no">No</option>
+                </select>
             </div>
             <!-- Natilla costeña -->
             <div class="question">
-                <label for="producto3">Natilla costeña</label>
-                <p class="product-description">
-                    La natilla costeña es un postre cremoso y suave, acompañado con queso fresco, ideal para quienes disfrutan de los sabores tradicionales. Es una excelente fuente de nutrientes y una deliciosa manera de terminar una comida.
-                </p>
-                <textarea id="producto3" name="producto3" placeholder="¿Qué opinas de la natilla costeña? ¿La has probado antes?" required></textarea>
-            </div>
-            <!-- Preguntas adicionales -->
-            <div class="question">
-                <label for="producto4">¿Qué productos te gustaría que añadiéramos a la encuesta?</label>
-                <textarea id="producto4" name="producto4" placeholder="Por favor, dime qué productos te gustaría ver en nuestra oferta."></textarea>
-            </div>
-            <div class="question">
-                <label for="producto5">¿Estás satisfech@ con estos productos?</label>
-                <textarea id="producto5" name="producto5" placeholder="Cuéntanos si estás satisfecho/a o qué mejorarías."></textarea>
-            </div>
-            <div class="question">
-                <label for="producto6">¿Qué piensas de estos productos?</label>
-                <textarea id="producto6" name="producto6" placeholder="Escribe tus opiniones o sugerencias sobre estos productos."></textarea>
-            </div>
-            <!-- Botón de envío -->
-            <button type="submit">Enviar Respuestas</button>
-        </form>
-    </div>
-</body>
-</html>
+                <label for="natilla_sabor">¿Te gusta el sabor de la natilla costeña?</label>
+                <img class="product-image" src="imagenes/natilla_costena.jpg" alt="Natilla Costeña">
+                <select id="natilla_sabor" name="natilla_sabor" required>
+                    <option value="si_mucho">Sí, mucho</option>
+                    <option value="si">Sí
